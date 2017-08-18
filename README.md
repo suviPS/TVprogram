@@ -4,11 +4,11 @@
 <img src="preview_images/tv_program_preview.png" width=200 align="right" />
 
 
-WebView based app connecting several useful web sites.
+WebView based app that connects several useful websites.
 
 
 
-About section of app:
+About section of app: <br>
 "Ova aplikacija nastala je iz potrebe da se grupisu informacije najboljih online provajdera pregleda TV programa u regionu i kao takva ne zadrzava nikakva prava na sadrzaj pregleda programa i nije odgovorna za njegovo odrzavanje."
 
 
