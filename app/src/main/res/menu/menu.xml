@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app_my_namespace="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menuRefresh"
+        android:actionViewClass="android.support.v7.widget.SearchView"
+        app_my_namespace:showAsAction="always"
+        android:icon="@drawable/refresh"
+        android:title="Osvjezi" />
+
+    <item
+        android:id="@+id/menuMojTvHr"
+        app_my_namespace:showAsAction="never"
+        android:title="MojTv.hr" />
+
+
+    <item
+        android:id="@+id/menuTVprofilNet"
+        app_my_namespace:showAsAction="never"
+        android:title="TVprofil.net" />
+
+    <item android:title="Klix.ba"
+        app_my_namespace:showAsAction="never"
+        android:id="@+id/menuKlixBa"/>
+
+    <item android:title="Aladin.info"
+        app_my_namespace:showAsAction="never"
+        android:id="@+id/menuAladinInfo"/>
+
+    <item android:title="Info"
+        android:id="@+id/menuAbout"/>
+
+</menu>

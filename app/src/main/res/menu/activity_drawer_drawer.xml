@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item android:title="Provajderi">
+        <menu>
+            <item
+                android:id="@+id/drawerMojTvHr"
+                android:icon="@drawable/ic_mojtv"
+                android:title="MojTv" />
+            <item
+                android:id="@+id/drawerTVprofilNet"
+                android:icon="@drawable/ic_tvprofil"
+                android:title="TVprofil" />
+            <item
+                android:id="@+id/drawerKlixBa"
+                android:icon="@drawable/ic_klix"
+                android:title="Klix" />
+            <item
+                android:id="@+id/drawerAladinInfo"
+                android:icon="@drawable/ic_aladin_info"
+                android:title="Aladin" />
+
+            <item
+                android:id="@+id/drawerArenaSport"
+                android:icon="@drawable/ic_arenasport"
+                android:title="Arena sport TV" />
+            <item
+                android:id="@+id/drawerSportKlub"
+                android:icon="@drawable/ic_sportklub"
+                android:title="Sportklub" />
+            <item
+                android:id="@+id/drawerEurosport"
+                android:icon="@drawable/ic_eurosport"
+                android:title="Eurosport" />
+
+        </menu>
+    </item>
+
+    <item android:title="Ostalo">
+        <menu>
+            <item
+                android:id="@+id/drawerAbout"
+                android:icon="@drawable/ic_help_black_24dp"
+                android:title="O aplikaciji" />
+            <item
+                android:id="@+id/drawerContactUs"
+                android:icon="@drawable/ic_email_black_24dp"
+                android:title="Kontaktirajte nas" />
+
+        </menu>
+    </item>
+
+</menu>
