@@ -42,7 +42,6 @@ public class DrawerActivity extends AppCompatActivity
     //private String urlTemp= "";
 
 
-    //TODO: remove OldMainActivity
     //TODO: add SwipeRefreshLayout (remove menu refresh icon)
 
 
@@ -131,7 +130,7 @@ public class DrawerActivity extends AppCompatActivity
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu02, menu);
+        getMenuInflater().inflate(R.menu.menu, menu);
         return true;
     }
 
@@ -139,7 +138,7 @@ public class DrawerActivity extends AppCompatActivity
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        if (id == R.id.menuRefresh02) {
+        if (id == R.id.menuRefresh) {
             webView.reload();
             return true;
         }
