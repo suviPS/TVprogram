@@ -1,52 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-
-    <item android:title="Provajderi">
+    <item android:title="@string/m_providers">
         <menu>
-            <item
-                android:id="@+id/drawerMojTvHr"
-                android:icon="@drawable/ic_mojtv"
-                android:title="MojTv" />
             <item
                 android:id="@+id/drawerTVprofilNet"
                 android:icon="@drawable/ic_tvprofil"
-                android:title="TVprofil" />
+                android:title="@string/m_tvprofil" />
+            <item
+                android:id="@+id/drawerMojTvHr"
+                android:icon="@drawable/ic_mojtv"
+                android:title="@string/m_mojtv" />
             <item
                 android:id="@+id/drawerKlixBa"
                 android:icon="@drawable/ic_klix"
-                android:title="Klix" />
+                android:title="@string/m_klix" />
             <item
                 android:id="@+id/drawerAladinInfo"
                 android:icon="@drawable/ic_aladin_info"
-                android:title="Aladin" />
+                android:title="@string/m_aladin" />
 
             <item
                 android:id="@+id/drawerArenaSport"
                 android:icon="@drawable/ic_arenasport"
-                android:title="Arena sport TV" />
+                android:title="@string/m_arena" />
             <item
                 android:id="@+id/drawerSportKlub"
                 android:icon="@drawable/ic_sportklub"
-                android:title="Sportklub" />
+                android:title="@string/m_sportklub" />
             <item
                 android:id="@+id/drawerEurosport"
                 android:icon="@drawable/ic_eurosport"
-                android:title="Eurosport" />
+                android:title="@string/m_eurosport" />
 
         </menu>
     </item>
 
-    <item android:title="Ostalo">
+    <item android:title="@string/m_others">
         <menu>
             <item
                 android:id="@+id/drawerAbout"
                 android:icon="@drawable/ic_help_black_24dp"
-                android:title="O aplikaciji" />
-            <!--<item-->
-                <!--android:id="@+id/drawerContactUs"-->
-                <!--android:icon="@drawable/ic_email_black_24dp"-->
-                <!--android:title="Kontaktirajte nas" />-->
+                android:title="@string/m_about_app" />
 
         </menu>
     </item>

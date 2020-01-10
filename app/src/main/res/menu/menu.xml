@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app_my_namespace="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
         android:id="@+id/menuRefresh"
-        android:actionViewClass="androidx.appcompat.widget.SearchView"
-        app_my_namespace:showAsAction="always"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"
+        app:showAsAction="always"
         android:icon="@drawable/refresh"
-        android:title="Osvjezi" />
+        android:title="@string/m_refresh" />
 
 </menu>

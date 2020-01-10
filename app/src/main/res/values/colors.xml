@@ -5,6 +5,7 @@
     <color name="colorAccent">#78909c</color>
 
     <color name="myTextColor">#fafafa</color>
+    <color name="snackbarTextColor">#b0bec5</color>
 
 
 </resources>
