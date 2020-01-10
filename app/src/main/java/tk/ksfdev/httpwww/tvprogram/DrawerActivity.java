@@ -2,6 +2,7 @@ package tk.ksfdev.httpwww.tvprogram;
 
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -16,7 +17,8 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import android.view.Menu;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+
 import android.view.MenuItem;
 import android.view.View;
 import android.webkit.WebView;
@@ -29,6 +31,7 @@ public class DrawerActivity extends AppCompatActivity
     private WebView webView;
     private ActionBarDrawerToggle toggleListener;
     private DrawerLayout drawerLayout;
+    private SwipeRefreshLayout swipeRefresh;
 
     private String instanceTag = "WEBLOCATION";
 
@@ -36,12 +39,10 @@ public class DrawerActivity extends AppCompatActivity
     private String urlMojTvHr= "https://mojtv.hr/tv-program/-10/bih.aspx";
     private String urlTVprofil= "https://tvprofil.com/ba/index/drzava/";
     private String urlKlixBa= "https://www.klix.ba/tv-program";
-    private String urlAladinInfo= "http://tv.aladin.info/";
-    private String urlArenaSport= "http://www.tvarenasport.com/tv-program";
-    private String urlSportKlub= "http://sportklub.rs/Programska-sema";
+    private String urlAladinInfo= "https://tv.aladin.info/";
+    private String urlArenaSport= "https://www.tvarenasport.com/tv-program";
+    private String urlSportKlub= "https://sportklub.rs/Programska-sema";
     private String urlEurosport= "https://www.eurosport.rs/tvschedule.shtml";
-
-    //TODO: add SwipeRefreshLayout (remove menu refresh icon)
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,11 +61,28 @@ public class DrawerActivity extends AppCompatActivity
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        swipeRefresh = findViewById(R.id.swipeRefresh);
+        swipeRefresh.setColorSchemeColors(Color.GRAY);
+        swipeRefresh.setOnRefreshListener(() -> webView.reload());
+
         //reference layout parts
         webView = findViewById(R.id.webView);
         webView.setWebViewClient(new WebViewClient());
         webView.getSettings().setJavaScriptEnabled(true);
         webView.getSettings().setDomStorageEnabled(true);
+        webView.setWebViewClient(new WebViewClient(){
+            @Override
+            public void onPageStarted(WebView view, String url, Bitmap favicon) {
+                super.onPageStarted(view, url, favicon);
+                swipeRefresh.setRefreshing(true);
+            }
+
+            @Override
+            public void onPageFinished(WebView view, String url) {
+                super.onPageFinished(view, url);
+                swipeRefresh.setRefreshing(false);
+            }
+        });
 
         if(savedInstanceState!=null)
             webView.loadUrl(savedInstanceState.getString(instanceTag));
@@ -122,23 +140,6 @@ public class DrawerActivity extends AppCompatActivity
         }
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-
-        if (id == R.id.menuRefresh) {
-            webView.reload();
-            return true;
-        }
-        return false;
-    }
-
     //items from Drawer
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
@@ -170,9 +171,6 @@ public class DrawerActivity extends AppCompatActivity
                 webView.loadUrl(urlEurosport);
                 break;
 
-            case R.id.menuRefresh:
-                webView.reload();
-                break;
             case R.id.drawerAbout:
                 //classic about message, maybe new layout in future
                 new AlertDialog.Builder(this)
