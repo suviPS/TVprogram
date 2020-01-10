@@ -7,9 +7,9 @@ android {
         applicationId "tk.ksfdev.httpwww.tvprogram"
         minSdkVersion 16
         targetSdkVersion 28
-        versionName '1.5'
+        versionName '1.6.0'
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        versionCode 5
+        versionCode 6
     }
     buildTypes {
         release {
