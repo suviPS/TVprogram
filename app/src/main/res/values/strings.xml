@@ -3,9 +3,27 @@
 
     <string name="drawer_text">Moj pregled TV programa</string>
 
+    <string name="no_connection">Nema internet konekcije</string>
+    <string name="try_again">POKUSAJ PONOVO</string>
 
-    <string name="title_activity_drawer">DrawerActivity</string>
+    <string name="m_refresh">Osvjezi</string>
+    <string name="m_providers">Provajderi</string>
+    <string name="m_tvprofil">TVprofil</string>
+    <string name="m_mojtv">MojTv</string>
+    <string name="m_klix">Klix</string>
+    <string name="m_aladin">Aladin</string>
+    <string name="m_arena">Arena sport TV</string>
+    <string name="m_sportklub">Sportklub</string>
+    <string name="m_eurosport">Eurosport</string>
+    <string name="m_others">Ostalo</string>
+    <string name="m_about_app">O aplikaciji</string>
+
+    <string name="about_info">Ova aplikacija nastala je iz potrebe da se grupisu informacije najboljih
+        online provajdera pregleda TV programa u regionu  i kao takva ne zadrzava nikakva prava na
+        sadrzaj pregleda programa i nije odgovorna za njegovo odrzavanje. \n\nAdditional credits for graphic assets:
+        \nIcons made by DinosoftLabs from www.flaticon.com is licensed by Creative Commons BY 3.0
+    </string>
+
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-
 </resources>
