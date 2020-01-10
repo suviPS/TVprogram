@@ -34,7 +34,7 @@ public class DrawerActivity extends AppCompatActivity
 
     //websites
     private String urlMojTvHr= "https://mojtv.hr/tv-program/-10/bih.aspx";
-    private String urlTVprofil= "http://m.tvprofil.net/?grupaID=4";
+    private String urlTVprofil= "https://tvprofil.com/ba/index/drzava/";
     private String urlKlixBa= "https://www.klix.ba/tv-program";
     private String urlAladinInfo= "http://tv.aladin.info/";
     private String urlArenaSport= "http://www.tvarenasport.com/tv-program";
