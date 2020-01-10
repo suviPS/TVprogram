@@ -43,10 +43,10 @@
                 android:id="@+id/drawerAbout"
                 android:icon="@drawable/ic_help_black_24dp"
                 android:title="O aplikaciji" />
-            <item
-                android:id="@+id/drawerContactUs"
-                android:icon="@drawable/ic_email_black_24dp"
-                android:title="Kontaktirajte nas" />
+            <!--<item-->
+                <!--android:id="@+id/drawerContactUs"-->
+                <!--android:icon="@drawable/ic_email_black_24dp"-->
+                <!--android:title="Kontaktirajte nas" />-->
 
         </menu>
     </item>

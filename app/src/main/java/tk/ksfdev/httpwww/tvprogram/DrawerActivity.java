@@ -7,14 +7,14 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.CoordinatorLayout;
-import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.snackbar.Snackbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -37,7 +37,8 @@ public class DrawerActivity extends AppCompatActivity
 
     private String urlArenaSport= "http://www.tvarenasport.com/tv-program";
     private String urlSportKlub= "http://sportklub.rs/Programska-sema";
-    private String urlEurosport= "http://www.eurosport.rs/#watch-schedule__wrapper";
+//    private String urlEurosport= "http://www.eurosport.rs/#watch-schedule__wrapper";
+    private String urlEurosport= "https://www.eurosport.rs/tvschedule.shtml";
 
     //private String urlTemp= "";
 
@@ -66,7 +67,7 @@ public class DrawerActivity extends AppCompatActivity
         webView = (WebView) findViewById(R.id.webView);
         webView.setWebViewClient(new WebViewClient());
         webView.getSettings().setJavaScriptEnabled(true);
-
+        webView.getSettings().setDomStorageEnabled(true);
 
 
         if(savedInstanceState!=null)
@@ -84,8 +85,7 @@ public class DrawerActivity extends AppCompatActivity
 
         if(networkInfo != null && networkInfo.isConnected()) {
             //Do nothing
-        }
-        else {
+        } else {
             //No internet connection
             webView.setVisibility(View.INVISIBLE);
             coordinatorLayout= (CoordinatorLayout) findViewById(R.id.cordinatorLayout02);
@@ -105,7 +105,7 @@ public class DrawerActivity extends AppCompatActivity
 
             // Changing text color
             View sbView = snackbar.getView();
-            TextView textView = (TextView) sbView.findViewById(android.support.design.R.id.snackbar_text);
+            TextView textView = sbView.findViewById(com.google.android.material.R.id.snackbar_text);
             textView.setTextColor(Color.GRAY);
 
             snackbar.show();
@@ -118,7 +118,7 @@ public class DrawerActivity extends AppCompatActivity
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else if(webView.canGoBack()){
@@ -187,16 +187,18 @@ public class DrawerActivity extends AppCompatActivity
                 new AlertDialog.Builder(this)
                         .setTitle("\tO aplikaciji")
                         .setMessage("Ova aplikacija nastala je iz potrebe da se grupisu informacije najboljih online provajdera pregleda TV programa u regionu" +
-                                " i kao takva ne zadrzava nikakva prava na sadrzaj pregleda programa i nije odgovorna za njegovo odrzavanje. " +
-                                "\n\nKreirao: Petar Suvajac")
+                                " i kao takva ne zadrzava nikakva prava na sadrzaj pregleda programa i nije odgovorna za njegovo odrzavanje. "
+                                + "\n\nAdditional credits for graphic assets: \n" +
+                                        "Icons made by DinosoftLabs from www.flaticon.com is licensed by Creative Commons BY 3.0"
+                                )
                         .setPositiveButton(android.R.string.yes, null)
                         .show();
                 break;
 
-            case R.id.drawerContactUs:
-                //email
-                sendMeEmail();
-                break;
+//            case R.id.drawerContactUs:
+//                //email
+//                sendMeEmail();
+//                break;
 
 
             default:
